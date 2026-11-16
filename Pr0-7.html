@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Responsive Grid Gallery</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f4f8;
+        }
+
+        header {
+            background: #263b5e;
+            color: white;
+            text-align: center;
+            padding: 40px 15px;
+        }
+
+        header h1 {
+            font-size: clamp(24px, 5vw, 40px);
+        }
+
+        header p {
+            font-size: clamp(14px, 2vw, 18px);
+        }
+
+        h2 {
+            text-align: center;
+            color: #263b5e;
+            margin: 40px 10px 20px;
+        }
+
+        /* Responsive Grid Container */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 25px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        /* Image Cards */
+        .item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            background: white;
+            box-shadow: 0 4px 12px #ccc;
+        }
+
+        .item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s;
+        }
+
+        .item:hover img {
+            transform: scale(1.08);
+        }
+
+        /* Orientation Overlay */
+        .overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.65);
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+
+        .item h3 {
+            margin: 0;
+        }
+
+        .item p {
+            margin: 5px 0 0;
+            font-size: 14px;
+        }
+
+        /* Different Image Orientations */
+        .wide {
+            grid-column: span 2;
+        }
+
+        .wide img {
+            height: 300px;
+        }
+
+        .tall img {
+            height: 350px;
+        }
+
+        /* Responsive Text and Grid */
+        @media (max-width: 768px) {
+            .gallery {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .wide {
+                grid-column: span 2;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .wide {
+                grid-column: span 1;
+            }
+
+            .item img,
+            .wide img,
+            .tall img {
+                height: 220px;
+            }
+        }
+
+        footer {
+            background: #263b5e;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 40px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Beautiful World Gallery</h1>
+        <p>Explore nature, mountains, beaches and beautiful landscapes.</p>
+    </header>
+
+    <h2>Responsive Image Gallery</h2>
+
+    <div class="gallery">
+
+        <div class="item wide">
+            <img loading="lazy"
+            src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=900"
+            alt="Mountain landscape">
+            <div class="overlay">
+                <h3>Mountain Views</h3>
+                <p>Beautiful natural landscapes</p>
+            </div>
+        </div>
+
+        <div class="item tall">
+            <img loading="lazy"
+            src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600"
+            alt="Tropical beach">
+            <div class="overlay">
+                <h3>Beach</h3>
+                <p>Peaceful ocean views</p>
+            </div>
+        </div>
+
+        <div class="item">
+            <img loading="lazy"
+            src="https://images.unsplash.com/photo-1448375240586-882707db888b?w=600"
+            alt="Green forest">
+            <div class="overlay">
+                <h3>Forest</h3>
+                <p>Green nature</p>
+            </div>
+        </div>
+
+        <div class="item">
+            <img loading="lazy"
+            src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=600"
+            alt="Beautiful lake">
+            <div class="overlay">
+                <h3>Lake</h3>
+                <p>Calm and peaceful</p>
+            </div>
+        </div>
+
+        <div class="item wide">
+            <img loading="lazy"
+            src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?w=900"
+            alt="Sunset landscape">
+            <div class="overlay">
+                <h3>Sunset</h3>
+                <p>Beautiful evening scenery</p>
+            </div>
+        </div>
+
+        <div class="item">
+            <img loading="lazy"
+            src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=600"
+            alt="Ocean waves">
+            <div class="overlay">
+                <h3>Ocean</h3>
+                <p>Blue ocean waves</p>
+            </div>
+        </div>
+
+        <div class="item">
+            <img loading="lazy"
+            src="https://images.unsplash.com/photo-1519681393784-d120267933ba?w=600"
+            alt="Snowy mountain">
+            <div class="overlay">
+                <h3>Snow Mountains</h3>
+                <p>Beautiful snowy peaks</p>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>©️ 2026 Beautiful World Gallery | Responsive Web Design</p>
+    </footer>
+
+</body>
+</html>
